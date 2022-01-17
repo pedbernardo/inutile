@@ -1,6 +1,6 @@
 {
   "name": "inutile",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Another useless Javascript utility functions collection",
   "main": "dist/inutile.esm.js",
   "module": "dist/inutile.esm.js",
