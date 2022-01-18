@@ -5,6 +5,88 @@
 })(this, (function (exports) { 'use strict';
 
   /**
+   * Verifica se é um objeto Date
+   *
+   * @param {Date} date - objeto Date
+   * @returns {boolean} se é um objeto date
+   */
+  function isDate (date) {
+    return date instanceof Date && !isNaN(date)
+  }
+
+  /**
+   * Verifica se é um string de data no formato DD/MM/AAAA
+   *
+   * @param {string} stringDate - data no formato DD/MM/AAAA
+   * @returns {boolean} se é uma data válida
+   */
+  function isDateString (stringDate) {
+    return isDate(parseDate(stringDate))
+  }
+
+  /**
+   * Transforma uma data no formato DD/MM/AAAA em um objeto Date
+   *
+   * @param {string} stringDate - data no formato DD/MM/AAAA
+   * @return {Date} Date Object
+   */
+  function parseDate (stringDate) {
+    const [dd, mm, yyyy] = stringDate.split('/');
+    return new Date(yyyy, mm - 1, dd)
+  }
+
+  /**
+   * Formata um objeto Date com o método nativo `toLocaleDateString`
+   * utilizando sempre a linguaguem `pt-BR`
+   *
+   * @param {Date} date - objeto Date
+   * @param {object} config - objeto de configuração do método `toLocaleDateString`
+   * @returns {string} data formatada
+   */
+  function formatDate (date, config = {}) {
+    return date.toLocaleDateString('pt-BR', config)
+  }
+
+  /**
+   * Retorna o nome do mês informado em inteiro (0-11) por extenso
+   * utilizando sempre a linguaguem `pt-BR`
+   *
+   * @param {string|number} monthNumber - número do mês, iniciando em 0 (ex. 0 = Janeiro)
+   * @param {string} config.month - parâmetro `month` do método `toLocaleString`
+   * @param {boolean} config.capitalize - retorna o nome do mês capitalizado (ex. Janeiro ao invés de janeiro)
+   * @return {string} nome do mês
+   */
+  function getMonthNameByNumber (monthNumber, config = {
+    month: 'long',
+    capitalize: true
+  }) {
+    const date = new Date();
+    const currentMonth = parseInt(monthNumber);
+
+    date.setMonth(currentMonth);
+
+    const month = date.toLocaleString('pt-BR', { month: config.month });
+
+    if (!config.capitalize) return month
+
+    return month[0].toUpperCase() + month.slice(1)
+  }
+
+  /**
+   * Adiciona meses a um objeto Date
+   *
+   * @param {Date} date - data para calcular
+   * @param {number} quantity - meses para somar, aceita valores negativos
+   * @return {Date} data calculada
+   */
+  function addMonths (date, quantity) {
+    const newDate = new Date(date);
+    newDate.setMonth(date.getMonth() + quantity);
+
+    return newDate
+  }
+
+  /**
    * Converte as respostas afirmativas `Sim` e `Não`
    * em seus equivalentes boleanos
    *
@@ -211,18 +293,24 @@
     }
   }
 
+  exports.addMonths = addMonths;
   exports.affirmativeToBoolean = affirmativeToBoolean;
   exports.capitalize = capitalize;
   exports.currencyToNumber = currencyToNumber;
   exports.dateFromTime = dateFromTime;
   exports.differenceInMs = differenceInMs;
   exports.durationToDecimal = durationToDecimal;
+  exports.formatDate = formatDate;
+  exports.getMonthNameByNumber = getMonthNameByNumber;
   exports.isCurrency = isCurrency;
+  exports.isDate = isDate;
+  exports.isDateString = isDateString;
   exports.isDuration = isDuration;
   exports.isTime = isTime;
   exports.msToDuration = msToDuration;
   exports.numberToCurrency = numberToCurrency;
   exports.padTwoDigits = padTwoDigits;
+  exports.parseDate = parseDate;
 
   Object.defineProperty(exports, '__esModule', { value: true });
 
