@@ -18,12 +18,11 @@ ___
 
 ### 📅 Date Helpers
 - isDate
-- isValidString
-- getMonthNameByNumber
+- isDateString
 - parseDate
 - formatDate
+- getMonthNameByNumber
 - addMonths
-- getMonthDiff
 
 <br>
 
@@ -43,7 +42,7 @@ ___
 
 <br>
 
-### 9️⃣ Numbers Helpers
+### 9️⃣ Number Helpers
 - padTwoDigits
 - isCurrency
 - currencyToNumber
