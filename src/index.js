@@ -1,4 +1,13 @@
 import {
+  isDate,
+  isDateString,
+  parseDate,
+  formatDate,
+  getMonthNameByNumber,
+  addMonths
+} from './date'
+
+import {
   affirmativeToBoolean,
   capitalize
 } from './string'
@@ -20,6 +29,14 @@ import {
 } from './number'
 
 export {
+  // 📅 Date Helpers
+  isDate,
+  isDateString,
+  parseDate,
+  formatDate,
+  getMonthNameByNumber,
+  addMonths,
+
   // 🆎 String Helpers
   affirmativeToBoolean,
   capitalize,
