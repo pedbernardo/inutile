@@ -79,3 +79,31 @@ export function addMonths (date, quantity) {
 
   return newDate
 }
+
+/**
+ * Retorna o primeiro dia do mês segundo uma data passada como parâmetro
+ *
+ * @param {Date} date Data passada como parâmetro
+ * @returns {Date} Primeiro dia do mês da data passada como parâmetro
+ */
+ export function getFirstDateOfMonth (date) {
+  return new Date(
+    date.getFullYear(),
+    date.getMonth(),
+    1
+  )
+}
+
+/**
+ * Retorna o último dia do mês segundo uma data passada como parâmetro
+ *
+ * @param {Date} date Data passada como parâmetro
+ * @returns {Date} Último dia do mês da data passada como parâmetro
+ */
+export function getLastDateOfMonth (date) {
+  return new Date(
+    date.getFullYear(),
+    date.getMonth() + 1,
+    0
+  )
+}
