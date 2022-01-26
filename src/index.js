@@ -4,7 +4,9 @@ import {
   parseDate,
   formatDate,
   getMonthNameByNumber,
-  addMonths
+  addMonths,
+  getFirstDateOfMonth,
+  getLastDateOfMonth
 } from './date'
 
 import {
@@ -36,6 +38,8 @@ export {
   formatDate,
   getMonthNameByNumber,
   addMonths,
+  getFirstDateOfMonth,
+  getLastDateOfMonth,
 
   // 🆎 String Helpers
   affirmativeToBoolean,
