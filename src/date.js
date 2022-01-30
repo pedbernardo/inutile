@@ -95,10 +95,10 @@ export function addYears (date, quantity) {
 }
 
 /**
- * Retorna o primeiro dia do mês de uma data
+ * Retorna a data no primeiro dia do mês
  *
- * @param {Date} date Data
- * @returns {Date} Data informada no primeiro dia do mês
+ * @param {Date} date data de referência
+ * @returns {Date} data no primeiro dia do mês
  */
 export function getFirstDateOfMonth (date) {
   return new Date(
@@ -109,10 +109,10 @@ export function getFirstDateOfMonth (date) {
 }
 
 /**
- * Retorna o último dia do mês de uma data
+ * Retorna a data no último dia do mês
  *
- * @param {Date} date Data
- * @returns {Date} Data informada no último dia do mês
+ * @param {Date} date data de referência
+ * @returns {Date} data no último dia do mês
  */
 export function getLastDateOfMonth (date) {
   return new Date(
