@@ -1,3 +1,5 @@
+import { range } from './array'
+
 /**
  * Verifica se é um objeto Date
  *
@@ -120,4 +122,41 @@ export function getLastDateOfMonth (date) {
     date.getMonth() + 1,
     0
   )
+}
+
+/**
+ * Retorna um array ou objeto de datas de acordo com o intervalo informado
+ *
+ * @param {Date} start - data de início do intervalo
+ * @param {Date} end - data de término do intervalo
+ * @param {boolean} options.details - se o resultado deve trazer detalhes da data
+ * @returns {Date[]|Object[]} - array com o intervalo de datas
+ */
+export function dateRange (start, end, options = { details: false }) {
+  const startMonth = start.getMonth()
+  const startYear = start.getFullYear()
+  const endMonth = end.getMonth()
+  const endYear = end.getFullYear()
+  const yearsInterval = range(startYear, endYear)
+
+  return yearsInterval
+    .map((year, i) => {
+      const startAt = i === 0 ? startMonth : 0
+      const endAt = i === yearsInterval.length - 1 ? endMonth : 11
+
+      return range(startAt, endAt)
+        .map(monthNumber => {
+          const date = new Date(year, monthNumber, 1)
+
+          if (!options.details) return date
+
+          return {
+            date,
+            year,
+            month: monthNumber,
+            monthName: getMonthNameByNumber(monthNumber)
+          }
+        })
+    })
+    .flat()
 }
