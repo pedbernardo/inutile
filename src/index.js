@@ -5,8 +5,10 @@ import {
   formatDate,
   getMonthNameByNumber,
   addMonths,
+  addYears,
   getFirstDateOfMonth,
-  getLastDateOfMonth
+  getLastDateOfMonth,
+  dateRange
 } from './date'
 
 import {
@@ -30,6 +32,10 @@ import {
   numberToCurrency
 } from './number'
 
+import {
+  range
+} from './array'
+
 export {
   // 📅 Date Helpers
   isDate,
@@ -38,8 +44,10 @@ export {
   formatDate,
   getMonthNameByNumber,
   addMonths,
+  addYears,
   getFirstDateOfMonth,
   getLastDateOfMonth,
+  dateRange,
 
   // 🆎 String Helpers
   affirmativeToBoolean,
@@ -57,5 +65,8 @@ export {
   padTwoDigits,
   isCurrency,
   currencyToNumber,
-  numberToCurrency
+  numberToCurrency,
+
+  // 🗃️ Array Helpers
+  range
 }
