@@ -57,7 +57,7 @@ export function getMonthNameByNumber (monthNumber, config = {
   const date = new Date()
   const currentMonth = parseInt(monthNumber)
 
-  date.setMonth(currentMonth)
+  date.setMonth(currentMonth, 1)
 
   const month = date.toLocaleString('pt-BR', { month: config.month })
 
@@ -86,7 +86,7 @@ export function addMonths (date, quantity) {
  * @param {Date} date Data passada como parâmetro
  * @returns {Date} Primeiro dia do mês da data passada como parâmetro
  */
- export function getFirstDateOfMonth (date) {
+export function getFirstDateOfMonth (date) {
   return new Date(
     date.getFullYear(),
     date.getMonth(),
