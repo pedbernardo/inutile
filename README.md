@@ -23,6 +23,10 @@ ___
 - formatDate
 - getMonthNameByNumber
 - addMonths
+- addYears
+- getFirstDateOfMonth
+- getLastDateOfMonth
+- dateRange
 
 <br>
 
@@ -47,3 +51,8 @@ ___
 - isCurrency
 - currencyToNumber
 - numberToCurrency
+
+<br>
+
+### 🗃️ Array Helpers
+- range
