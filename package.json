@@ -10,6 +10,7 @@
     "prebuild": "rimraf dist",
     "build": "rollup -c",
     "lint": "eslint src/**/*.js --max-warnings=0 --fix",
+    "release": "np",
     "prepare": "husky install"
   },
   "lint-staged": {
@@ -45,6 +46,7 @@
     "husky": "^7.0.4",
     "jest": "^27.4.7",
     "lint-staged": "^12.1.7",
+    "np": "^7.6.0",
     "rimraf": "^3.0.2",
     "rollup": "^2.64.0"
   }
