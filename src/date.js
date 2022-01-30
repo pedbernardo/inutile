@@ -81,10 +81,24 @@ export function addMonths (date, quantity) {
 }
 
 /**
- * Retorna o primeiro dia do mês segundo uma data passada como parâmetro
+ * Adiciona anos a um objeto Date
  *
- * @param {Date} date Data passada como parâmetro
- * @returns {Date} Primeiro dia do mês da data passada como parâmetro
+ * @param {Date} date - data para calcular
+ * @param {number} quantity - meses para somar, aceita valores negativos
+ * @return {Date} data calculada
+ */
+export function addYears (date, quantity) {
+  const newDate = new Date(date)
+  newDate.setFullYear(date.getFullYear() + quantity)
+
+  return newDate
+}
+
+/**
+ * Retorna o primeiro dia do mês de uma data
+ *
+ * @param {Date} date Data
+ * @returns {Date} Data informada no primeiro dia do mês
  */
 export function getFirstDateOfMonth (date) {
   return new Date(
@@ -95,10 +109,10 @@ export function getFirstDateOfMonth (date) {
 }
 
 /**
- * Retorna o último dia do mês segundo uma data passada como parâmetro
+ * Retorna o último dia do mês de uma data
  *
- * @param {Date} date Data passada como parâmetro
- * @returns {Date} Último dia do mês da data passada como parâmetro
+ * @param {Date} date Data
+ * @returns {Date} Data informada no último dia do mês
  */
 export function getLastDateOfMonth (date) {
   return new Date(
