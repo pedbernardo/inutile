@@ -89,6 +89,20 @@
   }
 
   /**
+   * Adiciona dias a um objeto Date
+   *
+   * @param {Date} date - data para calcular
+   * @param {number} quantity - dias para somar, aceita valores negativos
+   * @return {Date} data calculada
+   */
+  function addDays (date, quantity) {
+    const newDate = new Date(date);
+    newDate.setDate(date.getDate() + quantity);
+
+    return newDate
+  }
+
+  /**
    * Adiciona meses a um objeto Date
    *
    * @param {Date} date - data para calcular
@@ -388,6 +402,7 @@
     }
   }
 
+  exports.addDays = addDays;
   exports.addMonths = addMonths;
   exports.addYears = addYears;
   exports.affirmativeToBoolean = affirmativeToBoolean;

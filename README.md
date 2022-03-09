@@ -22,6 +22,7 @@ ___
 - parseDate
 - formatDate
 - getMonthNameByNumber
+- addDays
 - addMonths
 - addYears
 - getFirstDateOfMonth

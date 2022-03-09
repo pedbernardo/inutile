@@ -83,6 +83,20 @@ function getMonthNameByNumber (monthNumber, config = {
 }
 
 /**
+ * Adiciona dias a um objeto Date
+ *
+ * @param {Date} date - data para calcular
+ * @param {number} quantity - dias para somar, aceita valores negativos
+ * @return {Date} data calculada
+ */
+function addDays (date, quantity) {
+  const newDate = new Date(date);
+  newDate.setDate(date.getDate() + quantity);
+
+  return newDate
+}
+
+/**
  * Adiciona meses a um objeto Date
  *
  * @param {Date} date - data para calcular
@@ -382,4 +396,4 @@ function msToDuration (duration) {
   }
 }
 
-export { addMonths, addYears, affirmativeToBoolean, capitalize, currencyToNumber, dateFromTime, dateRange, differenceInMs, durationToDecimal, formatDate, getFirstDateOfMonth, getLastDateOfMonth, getMonthNameByNumber, isCurrency, isDate, isDateString, isDuration, isTime, msToDuration, numberToCurrency, padTwoDigits, parseDate, range };
+export { addDays, addMonths, addYears, affirmativeToBoolean, capitalize, currencyToNumber, dateFromTime, dateRange, differenceInMs, durationToDecimal, formatDate, getFirstDateOfMonth, getLastDateOfMonth, getMonthNameByNumber, isCurrency, isDate, isDateString, isDuration, isTime, msToDuration, numberToCurrency, padTwoDigits, parseDate, range };
